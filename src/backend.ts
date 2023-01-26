@@ -30,8 +30,8 @@ app.get('/api/helloWorld', async (req: any, res: any)=> {
 app.post('/api/price', jsonParser, async (req: any, res:any) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Content-Type', 'application/json');
-    console.log(res.body.token)
-    const token = res.body.token
+    //console.log(res.body.token)
+    const token = req.body.token
     const price = req.body.price
     await setPrice(token, price)
     console.log(token, price)

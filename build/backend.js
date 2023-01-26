@@ -40,8 +40,8 @@ app.get('/api/helloWorld', (req, res) => __awaiter(void 0, void 0, void 0, funct
 app.post('/api/price', jsonParser, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Content-Type', 'application/json');
-    console.log(res.body.token);
-    const token = res.body.token;
+    //console.log(res.body.token)
+    const token = req.body.token;
     const price = req.body.price;
     yield (0, database_1.setPrice)(token, price);
     console.log(token, price);

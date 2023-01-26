@@ -8,7 +8,7 @@ window.onload = function() {
                 url: `http://localhost:3000`,
             })
             const message = await dbData.json()
-            document.querySelector("#db").innerHTML = JSON.stringify(message.message)
+            document.querySelector("#db").innerHTML = JSON.stringify(message)
         } catch(err){
             console.error(err.message)
         }
@@ -43,7 +43,7 @@ window.onload = function() {
                 })
             })
             const dbDataJson = await dbDataResponse.json()
-            document.querySelector("#db2").innerHTML=dbDataJson.price
+            document.querySelector("#db2").innerHTML=dbDataJson.message
         } catch (err) {
             console.error(err.message)
         }
